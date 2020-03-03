@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html>
+
+<!-- Header -->
+<head>
+  <title>Visualization of Expenditure</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <h1>Visualization<a href="#"> of Expenditure</a></h1>
+
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+
+          <!-- Pages -->
+          <li><a href="index.html">Overview</a></li>
+          <li class="current"><a href="Education.html">Education</a></li class="current">
+          <li><a href="Healthcare.html">Healthcare</a></li>
+          <li><a href="Military.html">Military</a></li>
+          <li><a href="GDP Impact.html">GDP Impact</a></li class="current">
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <img class="paperclip" src="style/book.png" alt="paperclip" />
+        <div class="sidebar">
+
+        <!-- siderbar -->
+        <h3>Designer</h3>
+        <h2>Xi Zhang</h2>
+        <h5>M.S. Data Science</h5>
+        <h5>George Washington University</h5>
+        <p>Data Analysis | Machine Learning | Data Visualization</p>
+
+        <p>Instructor: Nima Zahadat, Ph.D</p>
+        </div>
+        <img class="paperclip" src="style/book.png" alt="paperclip" />
+        <div class="sidebar">
+          <h3>Contact Information</h3>
+          <p><h4>Email:</h4><a href="xzhangfox@gwu.edu">xzhangfox@gwu.edu</a></p>
+          <p><h4>GitHub:</h4><a href="https://github.com/xzhangfox">github.com/xzhangfox</a></p>
+          <p><h4>LinkedIn:</h4><a href="https://www.linkedin.com/in/xzhangfox/">linkedin.com/in/xzhangfox</a></p>
+        </div>
+        <img class="paperclip" src="style/book.png" alt="paperclip" />
+        <div class="sidebar">
+          <h3>References</h3>
+          <p>World Bank Group</p> 
+          <p><a href="https://www.worldbank.org/">worldbank.org</a></p>
+          <p>Google Charts</p> 
+          <p><a href="https://developers.google.com/chart/">developers.google.com/chart</a></p>
+          <p>Medium</p> 
+          <p><a href="https://medium.com/">medium.com</a></p>
+          <p>Flaticon</p> 
+          <p><a href="https://www.flaticon.com/">flaticon.com</a></p>
+          <p>Fonts Source</p>
+          <p><a href="https://fonts.google.com/">fonts.google.com</a></p>
+
+        </div>
+      </div>
+      <div id="content">
+        <!-- Body -->
+        <!-- Charts -->
+        <h1>Education Expenditure 2010 - 2016</h1>
+        <h3>Overview of Education Expenditure (USD)</h3>
+        <div id="Education_div" style="width: 630px; height: 350px;"></div>
+        <br /><br /><br /><br /><br />
+        <p></p>
+        <h3>Education Expenditure and GDP Comparison (USD)</h3>
+        <div id="Education_GDP_div" style="width: 630px; height: 350px;"></div>
+        <br /><br /><br /><br /><br />
+        <p></p>
+        <h3>Education Expenditure and GDP (per capita USD)</h3>
+        <div id="Education_GDPer_div" style="width: 630px; height: 350px;"></div>
+        <br /><br /><br /><br /><br />
+        <p></p>
+        <h3>Average Growth Rate 2010 - 2016(USD)</h3>
+        <div id="Education_fast_div" style="width: 630px; height: 350px;"></div>
+        <br /><br /><br /><br /><br />
+        <p></p>
+        <h3>Average Growth Rate 2010 - 2016(%)</h3>
+        <div id="Education_fast1_div" style="width: 630px; height: 350px;"></div>
+        <br /><br /><br /><br /><br />
+        <p></p>
+        <h1>Conclusion</h1>
+        <p>When it comes to spending on education in the ten selected countries, we can see that both the 
+          United States and China rank among the top. This is closely related to the relatively developed GDP 
+          of these two countries.</p>
+        <p>In the bubble chart of GDP per capita and education expenditure per capita, we can see how much each 
+          individual citizen values education. China, for example, has a low GDP per capita but high spending on private
+           education.</p>
+        <br /><br />
+        <h1>Forecast</h1>
+        <h3>Education Expenditure Growth (USD)</h3>
+        <div id="Education_GrowUSD_div" style="width: 630px; height: 350px;"></div>
+        <br />
+        <p></p>
+        <h3>Education Expenditure Growth (%)</h3>
+        <div id="Education_GrowPer_div" style="width: 630px; height: 350px;"></div>
+
+        <p></p>
+
+        <p>In both combo charts, it is easier to see the trend of the growth rate on the chart and 
+          to compare it with other countries. Take China as an example. From 2010 to 2016, the growth 
+          trend of China's education expenditure was small increase and decrease. So we can predict a 
+          downward trend in China's education spending over the next few years.</p>
+
+        </div>
+    </div>
+    <!-- Footer -->
+    <div id="footer">
+      Copyright &copy; 
+      <script>
+          var d = new Date()
+          document.write(d.getFullYear());
+      </script>
+      <a href="#">HTML5 | </a>
+      <a href="#">CSS3 | </a>
+      <a href="#">XZ</a>
+    </div>
+  </div>
+</body>
+
+
+
+<script type="text/javascript">
+
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawAllSheets);
+  
+  function drawAllSheets() {
+    drawSheetName('Education', 'SELECT A,B,C,D,E,F,G,H',
+            EducationHandler);
+    drawSheetName('Education', 'SELECT A,I,J',
+            Education_GDPHandler);
+    drawSheetName('Capita_Combine', 'SELECT A,B,C,D,E',
+            EducationGDPer_ResponseHandler);
+    drawSheetName('Education_growth', 'SELECT A,B,C,D,E,F,G,H,I,J,K',
+            EducationGrowUSD_ResponseHandler);
+    drawSheetName('Education_growth', 'SELECT L,M,N,O,P,Q,R,S,T,U,V',
+            EducationGrowPer_ResponseHandler);
+    drawSheetName('Education_fast', 'SELECT A,B,C,D,E,F,G,H,I,J,K',
+            EducationFast_ResponseHandler);
+    drawSheetName('Education_fast', 'SELECT L,M,N,O,P,Q,R,S,T,U,V',
+						EducationFast1_ResponseHandler);
+
+
+  } //drawAllSheets
+
+
+  function drawSheetName(sheetName, query, responseHandler) {
+      var queryString = encodeURIComponent(query);
+      var query = new google.visualization.Query(
+        'https://docs.google.com/spreadsheets/d/1SoWB4JJiK67XChpglo8AjLStyZZSDlc4M3vYT2TdNEM/gviz/tq?sheet=' + sheetName + '&headers=1&tq=' +queryString  
+      );
+      
+      //https://docs.google.com/spreadsheets/d/1SoWB4JJiK67XChpglo8AjLStyZZSDlc4M3vYT2TdNEM/edit?usp=sharing
+      query.send(responseHandler);
+    } //drawSheetNames
+    
+		function EducationHandler(response){
+			//get the data
+			var data = response.getDataTable();
+			
+			//set the options
+			var options = {
+					height: 400,
+					colorAxis: {colors: ['#ffc850', '#35BDF5']}, //yellow - skyblue
+					title: 'Total Education Expenditure'
+			};
+			var chart = new google.visualization.BarChart(document.getElementById('Education_div'));
+			chart.draw(data, options);
+		} // Total Education Bar
+
+
+    function Education_GDPHandler(response){
+			//get the data
+			var data = response.getDataTable();
+			
+			//set the options
+			var options = {
+					height: 400,
+					colorAxis: {colors: ['#ffc850', '#35BDF5']}, //yellow - skyblue
+					title: 'Education Expenditure and GDP Comparision'
+			};
+			var chart = new google.visualization.BarChart(document.getElementById('Education_GDP_div'));
+			chart.draw(data, options);
+		} // Education_GDP Bar
+
+    function EducationGDPer_ResponseHandler(response) {
+
+	    var data = response.getDataTable();
+
+	    var options = {
+	        title: 'Education Spending per person ' +
+	             'and GDP per person (2010-2016)',
+	        hAxis: {title: 'Education Spending Per Person'},
+          vAxis: {title: 'GDP Per Person'},
+	        bubble: {textStyle: {fontSize: 10,auraColor: 'none'}}      };
+
+	    var chart = new google.visualization.BubbleChart(document.getElementById('Education_GDPer_div'));
+	      chart.draw(data, options);
+      } // Education_GDP per capita Bubble
+      
+     function EducationGrowUSD_ResponseHandler(response) {
+
+	    var data = response.getDataTable();
+
+      var options = {
+          title : 'Education Expenditure Growth in USD',
+          vAxis: {title: 'Countriy'},
+          hAxis: {title: 'Year'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}        };
+
+	    var chart = new google.visualization.ComboChart(document.getElementById('Education_GrowUSD_div'));
+	      chart.draw(data, options);
+      } // Education Expenditure Growth in USD ComboChart
+      
+     function EducationGrowPer_ResponseHandler(response) {
+
+	    var data = response.getDataTable();
+
+      var options = {
+          title : 'Education Expenditure Growth in Percentage',
+          vAxis: {title: 'Countriy'},
+          hAxis: {title: 'Year'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}        };
+	    var chart = new google.visualization.ComboChart(document.getElementById('Education_GrowPer_div'));
+	      chart.draw(data, options);
+	    } // Education Expenditure Growth in USD ComboChart
+
+     function EducationFast_ResponseHandler(response) {
+
+	    var data = response.getDataTable();
+
+
+      var options = {
+        width: 600,
+        height: 400,
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '75%' },
+        isStacked: true,
+      };
+
+	    var chart = new google.visualization.ColumnChart(document.getElementById('Education_fast_div'));
+	      chart.draw(data, options);
+      } // Average Growth USD
+      
+     function EducationFast1_ResponseHandler(response) {
+
+	    var data = response.getDataTable();
+
+
+      var options = {
+        width: 600,
+        height: 400,
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '75%' },
+        isStacked: true,};
+	    var chart = new google.visualization.ColumnChart(document.getElementById('Education_fast1_div'));
+	      chart.draw(data, options);
+      } // Average Growth Percentage
+</script>
+</html>

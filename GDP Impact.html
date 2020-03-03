@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+
+<!-- Header -->
+<head>
+  <title>Visualization of Expenditure</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <h1>Visualization<a href="#"> of Expenditure</a></h1>
+
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+
+          <!-- Pages -->
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="Education.html">Education</a></li>
+          <li><a href="Healthcare.html">Healthcare</a></li>
+          <li><a href="Military.html">Military</a></li>
+          <li class="current"><a href="GDP Impact.html">GDP Impact</a></li class="current">
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <img class="paperclip" src="style/money.png" alt="paperclip" />
+        <div class="sidebar">
+
+        <!-- siderbar -->
+        <h3>Designer</h3>
+        <h2>Xi Zhang</h2>
+        <h5>M.S. Data Science</h5>
+        <h5>George Washington University</h5>
+        <p>Data Analysis | Machine Learning | Data Visualization</p>
+
+        <p>Instructor: Nima Zahadat, Ph.D</p>
+        </div>
+        <img class="paperclip" src="style/money.png" alt="paperclip" />
+        <div class="sidebar">
+          <h3>Contact Information</h3>
+          <p><h4>Email:</h4><a href="xzhangfox@gwu.edu">xzhangfox@gwu.edu</a></p>
+          <p><h4>GitHub:</h4><a href="https://github.com/xzhangfox">github.com/xzhangfox</a></p>
+          <p><h4>LinkedIn:</h4><a href="https://www.linkedin.com/in/xzhangfox/">linkedin.com/in/xzhangfox</a></p>
+        </div>
+        <img class="paperclip" src="style/money.png" alt="paperclip" />
+        <div class="sidebar">
+          <h3>References</h3>
+          <p>World Bank Group</p> 
+          <p><a href="https://www.worldbank.org/">worldbank.org</a></p>
+          <p>Google Charts</p> 
+          <p><a href="https://developers.google.com/chart/">developers.google.com/chart</a></p>
+          <p>Medium</p> 
+          <p><a href="https://medium.com/">medium.com</a></p>
+          <p>Flaticon</p> 
+          <p><a href="https://www.flaticon.com/">flaticon.com</a></p>
+          <p>Fonts Source</p>
+          <p><a href="https://fonts.google.com/">fonts.google.com</a></p>
+        </div>
+      </div>
+      <div id="content">
+        <!-- Body -->
+        <h1>GDP Impact for Education, Healthcare and Military</h1>
+        <h3>Overview of GDP (USD)</h3>
+        <div id="GDP_div" style="width: 630px; height: 350px;"></div>
+        <br /><br /><br /><br /><br />
+        <h3>Correlation between Education and GDP (USD)</h3>
+        <div id="Education_GDP_div" style="width: 630px; height: 350px;"></div>
+        <br /><br /><br /><br /><br />
+        <h3>Correlation between Healthcare and GDP (USD)</h3>
+        <div id="Healthcare_GDP_div" style="width: 630px; height: 350px;"></div>
+        <br /><br /><br /><br /><br />
+        <h3>Correlation between Military and GDP (USD)</h3>
+        <div id="Military_GDP_div" style="width: 630px; height: 350px;"></div>
+        <br /><br /><br />
+        <h1>Conclusion</h1>
+        <p>As can be seen from the bar chart, the overall GDP increased year by year from 2010 to 2016. 
+          The us has the largest share of GDP, while Mexico and South Korea have the fewest. </p>
+        <p>We can see from the graphs of scatter and trendline that spending on education and health care 
+          is proportional to GDP. Military spending, on the other hand, begins to move inversely to GDP at 
+          a certain point.</p>
+        <br />
+
+        <h1>Forecast</h1>
+        <h3>GDP Trend</h3>
+        <div id="GDP_Trend_div" style="width: 630px; height: 350px;"></div>
+        <br />
+
+        <p>The trend of GDP growth is slow year by year. Based on the relationship between education expenditure 
+          and healthcare expenditure and GDP, I predict that education and healthcare expenditure will also decline 
+          after 2016 as GDP declines. The current peak of GDP has not yet reached the turning point of military 
+          spending, so I believe that military spending will also decline with GDP.</p>
+    
+
+      </div>
+    </div>
+    <!-- Footer -->
+    <div id="footer">
+      Copyright &copy; 
+      <script>
+          var d = new Date()
+          document.write(d.getFullYear());
+      </script>
+      <a href="#">HTML5 | </a>
+      <a href="#">CSS3 | </a>
+      <a href="#">XZ</a>
+    </div>
+  </div>
+</body>
+
+
+<script type="text/javascript">
+
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawAllSheets);
+  
+  function drawAllSheets() {
+    drawSheetName('GDP', 'SELECT A,B,C,D,E,F,G,H',
+    GDPHandler);
+
+    drawSheetName('Education', 'SELECT I,J',
+    EducationGDPHandler);
+    drawSheetName('Healthcare', 'SELECT I,J',
+    HealthcareGDPHandler);
+    drawSheetName('Military', 'SELECT I,J',
+    MilitaryGDPHandler);
+
+
+    drawSheetName('GDP_Trend', 'SELECT A,B',
+    GDPTrendHandler);
+
+  } //drawAllSheets
+
+  function drawSheetName(sheetName, query, responseHandler) {
+      var queryString = encodeURIComponent(query);
+      var query = new google.visualization.Query(
+        'https://docs.google.com/spreadsheets/d/1SoWB4JJiK67XChpglo8AjLStyZZSDlc4M3vYT2TdNEM/gviz/tq?sheet=' + sheetName + '&headers=1&tq=' +queryString  
+      );
+      
+      //https://docs.google.com/spreadsheets/d/1SoWB4JJiK67XChpglo8AjLStyZZSDlc4M3vYT2TdNEM/edit?usp=sharing
+      query.send(responseHandler);
+    } //drawSheetNames
+    
+		function GDPHandler(response){
+			//get the data
+			var data = response.getDataTable();
+			
+			//set the options
+			var options = {
+					height: 400,
+					colorAxis: {colors: ['#ffc850', '#35BDF5']}, //yellow - skyblue
+					title: 'Total GDP'
+			};
+			var chart = new google.visualization.BarChart(document.getElementById('GDP_div'));
+			chart.draw(data, options);
+    } // Total GDP Bar
+
+    function EducationGDPHandler(response){
+			//get the data
+			var data = response.getDataTable();
+			
+			//set the options
+      var options = {
+         title: 'Correlation between Education and GDP',
+         vAxis: {title: 'GDP'},
+         hAxis: {title: 'Education Expenditure'},
+         legend: 'none',
+         crosshair: { trigger: 'both', orientation: 'both' },
+         trendlines: {
+           0: {
+             type: 'polynomial',
+             degree: 3,
+             visibleInLegend: true,
+           }
+         }
+       };
+			var chart = new google.visualization.ScatterChart(document.getElementById('Education_GDP_div'));
+			chart.draw(data, options);
+    } // Education GDP Correlation
+
+    function HealthcareGDPHandler(response){
+			//get the data
+			var data = response.getDataTable();
+			
+			//set the options
+      var options = {
+         title: 'Correlation between Healthcare and GDP',
+         vAxis: {title: 'GDP'},
+         hAxis: {title: 'Healthcare Expenditure'},
+         legend: 'none',
+         crosshair: { trigger: 'both', orientation: 'both' },
+         trendlines: {
+           0: {
+             type: 'polynomial',
+             degree: 3,
+             visibleInLegend: true,
+           }
+         }
+       };
+			var chart = new google.visualization.ScatterChart(document.getElementById('Healthcare_GDP_div'));
+			chart.draw(data, options);
+    } // Healthcare GDP Correlation
+
+    function MilitaryGDPHandler(response){
+			//get the data
+			var data = response.getDataTable();
+			
+			//set the options
+      var options = {
+         title: 'Correlation between Military and GDP',
+         vAxis: {title: 'GDP'},
+         hAxis: {title: 'Military Expenditure'},
+         legend: 'none',
+         crosshair: { trigger: 'both', orientation: 'both' },
+         trendlines: {
+           0: {
+             type: 'polynomial',
+             degree: 3,
+             visibleInLegend: true,
+           }
+         }
+       };
+			var chart = new google.visualization.ScatterChart(document.getElementById('Military_GDP_div'));
+			chart.draw(data, options);
+    } // Military GDP Correlation
+
+
+
+    
+    function GDPTrendHandler(response){
+			//get the data
+			var data = response.getDataTable();
+			
+			//set the options
+      var options = {
+         title: 'GDP Yearly Trend',
+         vAxis: {title: 'GDP'},
+         hAxis: {title: 'Year'},
+         legend: 'none',
+         crosshair: { trigger: 'both', orientation: 'both' },
+         trendlines: {
+           0: {
+             type: 'polynomial',
+             degree: 3,
+             visibleInLegend: true,
+           }
+         }
+       };
+			var chart = new google.visualization.ScatterChart(document.getElementById('GDP_Trend_div'));
+			chart.draw(data, options);
+    } //GDP Trend Scatter
+
+
+
+
+
+
+  </script>
+</html>
