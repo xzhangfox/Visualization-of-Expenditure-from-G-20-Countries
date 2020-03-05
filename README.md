@@ -26,17 +26,20 @@ After mastering data visualization in Python, R, I became very interested in how
 	2010 – 2016
 
 ## Programming Introduction
-This project mainly uses Google API, Google Sheet and Google Chart to store data and draw charts.
+This project mainly uses Google API, Google Spreadsheet and Google Chart to store data and draw charts.
+Cleaned Data Publish Site: [Spreadsheets](https://docs.google.com/spreadsheets/d/1SoWB4JJiK67XChpglo8AjLStyZZSDlc4M3vYT2TdNEM/edit?usp=sharing
+)
+If you are intrested in details about my research progress, please move to my [Report]().
 
 ## Publish Site
 https://xzhangfox.github.io/
 
 ## References
 
-* World Bank Group: worldbank.org
-* Google Charts: developers.google.com/chart
-* Medium: medium.com
-* Flaticon: flaticon.com 
-* Google Developer: developers.google.com
-* W3School: w3schools.com/
+* World Bank Group: https://worldbank.org
+* Google Charts: https://developers.google.com/chart
+* Medium: https://medium.com
+* Flaticon: https://flaticon.com 
+* Google Developer: https://developers.google.com
+* W3School: https://w3schools.com/
 
