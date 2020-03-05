@@ -26,8 +26,8 @@ After mastering data visualization in Python, R, I became very interested in how
 	2010 – 2016
 
 ## Programming Introduction
-This project mainly uses Google API, Google Spreadsheet and Google Chart to store data and draw charts.
-Cleaned Data Publish Site: [Spreadsheets](https://docs.google.com/spreadsheets/d/1SoWB4JJiK67XChpglo8AjLStyZZSDlc4M3vYT2TdNEM/edit?usp=sharing
+* This project mainly uses Google API, Google Spreadsheet and Google Chart to store data and draw charts.
+* Cleaned Data Publish Site: [Spreadsheets](https://docs.google.com/spreadsheets/d/1SoWB4JJiK67XChpglo8AjLStyZZSDlc4M3vYT2TdNEM/edit?usp=sharing
 )
 <img align="center" src="https://github.com/xzhangfox/Visualization-of-Expenditure-from-G-20-Countries/blob/master/style/GoogleAPI1.png" width="850" />
 <img align="center" src="https://github.com/xzhangfox/Visualization-of-Expenditure-from-G-20-Countries/blob/master/style/GoogleAPI2.png" width="850" />
