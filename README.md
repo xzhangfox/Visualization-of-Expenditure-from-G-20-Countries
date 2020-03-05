@@ -29,7 +29,10 @@ After mastering data visualization in Python, R, I became very interested in how
 This project mainly uses Google API, Google Spreadsheet and Google Chart to store data and draw charts.
 Cleaned Data Publish Site: [Spreadsheets](https://docs.google.com/spreadsheets/d/1SoWB4JJiK67XChpglo8AjLStyZZSDlc4M3vYT2TdNEM/edit?usp=sharing
 )
-If you are intrested in details about my research progress, please move to my [Report]().
+<img align="center" src="https://github.com/xzhangfox/Visualization-of-Expenditure-from-G-20-Countries/blob/master/style/GoogleAPI1.png" width="850" />
+<img align="center" src="https://github.com/xzhangfox/Visualization-of-Expenditure-from-G-20-Countries/blob/master/style/GoogleAPI2.png" width="850" />
+
+If you are intrested in details about my research progress, please move to my [Report](https://github.com/xzhangfox/Visualization-of-Expenditure-from-G-20-Countries/blob/master/Presentation/DATS%206401%20-%20Individual%20Project%201%20-%20Xi%20Zhang.pdf).
 
 ## Publish Site
 https://xzhangfox.github.io/
