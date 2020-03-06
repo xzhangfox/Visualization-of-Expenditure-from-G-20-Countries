@@ -36,7 +36,7 @@ If you are intrested in details about my research progress, please move to my [R
 
 ## Publish Site
 https://xzhangfox.github.io/
-
+<img align="center" src="https://github.com/xzhangfox/Visualization-of-Expenditure-from-G-20-Countries/blob/master/img/header.png" width="850" />
 ## References
 
 * World Bank Group: https://worldbank.org
