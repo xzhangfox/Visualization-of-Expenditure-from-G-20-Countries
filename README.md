@@ -35,7 +35,7 @@ After mastering data visualization in Python, R, I became very interested in how
 If you are intrested in details about my research progress, please move to my [Report](https://github.com/xzhangfox/Visualization-of-Expenditure-from-G-20-Countries/blob/master/Presentation/DATS%206401%20-%20Individual%20Project%201%20-%20Xi%20Zhang.pdf).
 
 ## Publish Site
-* Click here for more info: https://xzhangfox.github.io/Expenditure-Visualization/
+* Click here for more info: https://xzhangfox.github.io/Visualization-of-Expenditure-from-G-20-Countries/
 <img align="center" src="https://github.com/xzhangfox/Visualization-of-Expenditure-from-G-20-Countries/blob/master/img/header.png" width="850" />
 
 ## References
